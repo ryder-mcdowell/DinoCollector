@@ -1,24 +1,48 @@
-# README
+# Dino Collector
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Description...
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+These instructions will get you a copy of the project up and running on your local machine for development and testing.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+If you do not have ruby installed yet, you will want to make sure to do that and use version 2.5.0.
 
-* Database creation
+If you do not have rails installed yet, you can install it with:
 
-* Database initialization
+`gem install rails`
 
-* How to run the test suite
+You will also want bundler for installing dependencies. Install it with:
 
-* Services (job queues, cache servers, search engines, etc.)
+`gem install bundler`
 
-* Deployment instructions
+### Installing
 
-* ...
+Follow these steps to get a development environment running:
+
+1. Clone the repo onto your local machine:
+
+`git clone https://github.com/ryder-mcdowell/DinoCollector.git`
+
+2. Install dependencies:
+
+`bundle install`
+
+3. Create database:
+
+```
+rails db:create:all
+rails db:migrate
+```
+
+4. Initialize specs:
+
+`rails generate rspec:install`
+
+## Running the Tests
+
+To run the test suite, use the command:
+
+`rspec`
