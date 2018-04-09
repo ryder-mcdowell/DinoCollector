@@ -1,6 +1,7 @@
 # Dino Collector
 
-Description...
+Dino Collector is a text based game where the player first chooses a Dino and then uses that Dino to gather resources and tame other Dino's.
+The application includes a text based Dino combat simulator and has RTS elements.
 
 ## Getting Started
 
