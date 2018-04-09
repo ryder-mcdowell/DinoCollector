@@ -5,6 +5,10 @@ RSpec.describe Player do
     let(:startPosY) {10}
     let(:player) {Player.new(startPosX, startPosY)}
 
+    it "is not initially in combat" do
+        expect(player.in_combat?).to be_falsy
+    end
+
     it "can move forward" do
         player.move_forward
         expect(player.getX).to eq(startPosX)
