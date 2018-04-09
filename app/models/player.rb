@@ -5,4 +5,12 @@ class Player
         @y = y
     end
 
+    def getX
+        @x
+    end
+
+    def getY
+        @y
+    end
+
 end
