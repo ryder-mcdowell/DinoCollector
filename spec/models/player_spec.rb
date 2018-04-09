@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Player do
     let(:startPosX) {10}
     let(:startPosY) {10}
-    let(:player) {Player.new(x: startPosX, y: startPosY)}
+    let(:player) {Player.new(startPosX, startPosY)}
 
     it "can move forward" do
         player.move_forward
