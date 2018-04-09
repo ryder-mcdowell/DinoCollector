@@ -3,6 +3,7 @@ class Player
     def initialize(x, y)
         @x = x
         @y = y
+        @in_combat = false
     end
 
     def getX
@@ -27,6 +28,10 @@ class Player
 
     def move_right
         @x += 1
+    end
+
+    def in_combat?
+        @in_combat
     end
 
 end
