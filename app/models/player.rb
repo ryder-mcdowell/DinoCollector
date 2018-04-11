@@ -1,17 +1,10 @@
 class Player
+    attr_accessor :x, :y
 
     def initialize(x, y)
         @x = x
         @y = y
         @in_combat = false
-    end
-
-    def getX
-        @x
-    end
-
-    def getY
-        @y
     end
 
     def move_forward
