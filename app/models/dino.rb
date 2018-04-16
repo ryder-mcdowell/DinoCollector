@@ -1,4 +1,4 @@
-class Dino
+class Dino < ApplicationRecord
 
   attr_accessor :name
   attr_accessor :attack
