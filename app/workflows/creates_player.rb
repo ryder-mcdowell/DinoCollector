@@ -8,3 +8,4 @@ class CreatesPlayer
   def build
     self.player = Player.new(name: name)
   end
+end
