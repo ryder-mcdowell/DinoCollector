@@ -15,11 +15,4 @@ RSpec.describe "creating a player", type: :system do
     click_on("Create New Player")
     expect(page).to have_selector(".new_player")
   end
-
-  pending "allows a user to select a starting dino" do
-    visit pick_dino_path
-    click_on("Raptor")
-    visit player_dinos_path
-    expect(page).to have_content("Raptor")
-  end
 end
