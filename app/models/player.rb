@@ -19,6 +19,10 @@ class Player
     @my_turn
   end
 
+  def make_turn
+    @my_turn = true
+  end
+
   def add_dino(dino)
     @dinos << dino
   end

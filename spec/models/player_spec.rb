@@ -14,6 +14,12 @@ RSpec.describe Player do
     expect(player.my_turn?).to be_falsy
   end
 
+  it "can gain the turn in combat" do
+    player.initiate_combat
+    player.make_turn
+    expect(player).to be_my_turn
+  end
+
   it "doesn't initially have dinos" do
     expect(player.dino_count).to eq(0)
   end
