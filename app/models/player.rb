@@ -3,6 +3,7 @@ class Player
 
   def initialize()
     @in_combat = false
+    @my_turn = false
     @dinos = []
   end
 
@@ -10,12 +11,20 @@ class Player
     @in_combat
   end
 
-  def dino_count
-    @dinos.count
+  def initiate_combat
+    @in_combat = true
+  end
+
+  def my_turn?
+    @my_turn
   end
 
   def add_dino(dino)
     @dinos << dino
+  end
+
+  def dino_count
+    @dinos.count
   end
 
 end
