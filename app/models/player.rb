@@ -9,19 +9,19 @@ class Player < ApplicationRecord
   #end
 
   def in_combat?
-    in_combat
+    @in_combat
   end
 
   def initiate_combat
-    self.in_combat = true
+    @in_combat = true
   end
 
   def my_turn?
-    my_turn
+    @my_turn
   end
 
   def make_turn
-    self.my_turn = true
+    @my_turn = true
   end
 
   #def add_dino(dino)
