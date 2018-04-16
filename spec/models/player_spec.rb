@@ -8,6 +8,8 @@ RSpec.describe Player do
         #expect(player).not_to be_in_combat
     end
 
-
+    it "doesn't initially have dinos" do
+      expect(player.dino_count).to eq(0)
+    end
 
 end
