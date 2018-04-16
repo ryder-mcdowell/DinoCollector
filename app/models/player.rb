@@ -14,4 +14,8 @@ class Player
     @dinos.count
   end
 
+  def add_dino(dino)
+    @dinos << dino
+  end
+
 end
