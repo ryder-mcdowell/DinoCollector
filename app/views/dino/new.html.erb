@@ -1,0 +1,17 @@
+<h1>New Dino</h1>
+
+<%= form_for(@dino) do |f| %>
+  <%= f.label(:name) %>
+  <%= f.text_field(:name) %>
+  <br />
+  <%= f.label(:attack) %>
+  <%= f.text_field(:attack) %>
+  <br />
+  <%= f.label(:defence) %>
+  <%= f.text_field(:defence) %>
+  <br />
+  <%= f.label(:health) %>
+  <%= f.text_field(:health) %>
+  <br />
+  <%= f.submit %>
+<% end %>
