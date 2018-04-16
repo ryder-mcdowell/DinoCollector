@@ -9,6 +9,13 @@ RSpec.describe "creating a player", type: :system do
     expect(page).to have_content("Dino_Master_Bob")
   end
 
+  pendign "do not allow user to create a project without a name" do
+    visit new_user_path
+    fill_in "Player Name", with: ""
+    click_on("Create New Player")
+    expect(page).to have_selector(".new_player")
+  end
+
   pending "allows a user to select a starting dino" do
     visit pick_dino_path
     click_on("Raptor")
