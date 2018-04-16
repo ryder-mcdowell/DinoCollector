@@ -6,3 +6,4 @@ RSpec.describe CreatesPlayer do
     creator.build
     expect(create.project.name).to eq("Dino_Master_Bob")
   end
+end
