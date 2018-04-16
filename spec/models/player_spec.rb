@@ -5,13 +5,12 @@ RSpec.describe Player do
   let(:dino) {Dino.new("Raptor", 10, 10, 10)}
 
   it "is not initially in combat" do
-    expect(player.in_combat?).to be_falsy
-    #expect(player).not_to be_in_combat
+    expect(player).not_to be_in_combat
   end
 
   it "does not have the first turn" do
     player.initiate_combat
-    expect(player.my_turn?).to be_falsy
+    expect(player).to_not be_my_turn
   end
 
   it "can gain the turn in combat" do
