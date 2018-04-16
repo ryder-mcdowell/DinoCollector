@@ -2,11 +2,11 @@ class Player < ApplicationRecord
   #attr_accessor :dinos
   has_many :dinos
 
-  #def initialize()
-  #  @in_combat = false
-  #  @my_turn = false
-  #  @dinos = []
-  #end
+  def initialize()
+    @in_combat = false
+    @my_turn = false
+    @dinos = []
+  end
 
   def in_combat?
     @in_combat
@@ -24,12 +24,12 @@ class Player < ApplicationRecord
     @my_turn = true
   end
 
-  #def add_dino(dino)
-  #  @dinos << dino
-  #end
+  def add_dino(dino)
+    @dinos << dino
+  end
 
   def dino_count
-    dinos.count
+    @dinos.count
   end
 
 end
