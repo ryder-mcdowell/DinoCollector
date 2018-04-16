@@ -3,7 +3,6 @@ class CreatesPlayer
 
   def initialize(name: "")
     @name = name
-    @dinos = []
   end
 
   def build
