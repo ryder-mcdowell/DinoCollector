@@ -1,23 +1,12 @@
 class Dino < ApplicationRecord
+  belongs_to :player
 
-  attr_accessor :name
-  attr_accessor :attack
-  attr_accessor :defence
-  attr_accessor :health
+  def addHealth(health)
+    self.health += health
+  end
 
-    def initialize(name, attack, defence, health)
-      @name = name
-      @attack = attack
-      @defence = defence
-      @health = health
-    end
-
-    def addHealth(health)
-        @health += health
-    end
-
-    def removeHealth(health)
-        @health -= health
-    end
+  def removeHealth(health)
+    self.health -= health
+  end
 
 end
