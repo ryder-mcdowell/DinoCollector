@@ -1,5 +1,5 @@
 class CreatesPlayer
-  attr_accessor :name
+  attr_accessor :name, :player
 
   def initialize(name: "")
     @name = name
@@ -11,6 +11,6 @@ class CreatesPlayer
 
   def create
     build
-    project.save!
+    player.save!
   end
 end
