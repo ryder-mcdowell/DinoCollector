@@ -10,6 +10,11 @@ class PlayersController < ApplicationController
   def create
     @workflow = CreatesPlayer.new(name: params[:player][:name])
     @workflow.create
-    redirect_to players_path
+    if @workflow.success?
+      redirect_to players_path
+    else
+      @player = @workflow.player
+      render :new
+    end
   end
 end

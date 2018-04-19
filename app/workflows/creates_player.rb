@@ -3,6 +3,11 @@ class CreatesPlayer
 
   def initialize(name: "")
     @name = name
+    @success = false
+  end
+
+  def success?
+    @success
   end
 
   def build
@@ -11,6 +16,7 @@ class CreatesPlayer
 
   def create
     build
-    player.save!
+    result = player.save
+    @success = result
   end
 end
