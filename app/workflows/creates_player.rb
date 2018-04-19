@@ -8,4 +8,9 @@ class CreatesPlayer
   def build
     self.player = Player.new(name: name)
   end
+
+  def create
+    build
+    project.save!
+  end
 end
