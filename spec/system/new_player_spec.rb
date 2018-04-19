@@ -5,8 +5,7 @@ RSpec.describe "creating a player", type: :system do
     visit new_player_path
     fill_in "Player Name", with: "Dino_Master_Bob"
     click_on("Create Player")
-    #byebug
-    visit player_path
+    visit players_path
     expect(page).to have_content("Dino_Master_Bob")
   end
 
