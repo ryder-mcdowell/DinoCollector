@@ -1,8 +1,8 @@
 class Player < ApplicationRecord
   has_many :dinos, dependent: :destroy
 
-  def dino_count
-    dinos.count
+  def number_of_dinos
+    dinos.size
   end
 
 end
