@@ -1,11 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Dino do
+RSpec.describe Dino, type: :model do
     let(:startName) {'T Rex'}
     let(:startAttack) {10}
     let(:startDefence) {10}
     let(:startHealth) {10}
-    let(:dino) {Dino.new(startName, startAttack, startDefence, startHealth)}
+    let(:dino) {Dino.new(name: startName, attack: startAttack,
+      defence: startDefence, health: startHealth)}
 
     it "is has a name" do
         expect(dino.name).to be_truthy
