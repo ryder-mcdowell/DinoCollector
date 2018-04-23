@@ -1,4 +1,5 @@
 class Dino < ApplicationRecord
+  belongs_to :player, optional: true
   validates :name, presence: true
 
   def addHealth(health)
