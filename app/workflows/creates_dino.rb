@@ -1,8 +1,11 @@
 class CreatesDino
   attr_accessor :name, :attack, :defence, :health, :dino
 
-  def initialize(name: "")
+  def initialize(name:, attack:, defence:, health:)
     @name = name
+    @attack = attack
+    @defence = defence
+    @health = health
     @success = false
   end
 
