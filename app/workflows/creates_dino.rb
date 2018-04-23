@@ -22,6 +22,5 @@ class CreatesDino
     build
     result = dino.save
     @success = result
-    byebug
   end
 end
