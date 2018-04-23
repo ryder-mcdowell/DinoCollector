@@ -1,7 +1,7 @@
 class CreatesDino
   attr_accessor :name, :attack, :defence, :health, :dino
 
-  def initialize(name:, attack:, defence:, health:)
+  def initialize(name: "", attack: 0, defence: 0, health: 0)
     @name = name
     @attack = attack
     @defence = defence
@@ -14,7 +14,8 @@ class CreatesDino
   end
 
   def build
-    self.dino = Dino.new(name: name, attack: attack, defence: defence, health: health)
+    self.dino = Dino.new(name: name, attack: attack,
+      defence: defence, health: health)
   end
 
   def create
