@@ -9,6 +9,7 @@ RSpec.describe "creating a dino", type: :system do
     fill_in "Health", with: "10"
 
     click_on("Create Dino")
+    byebug
     visit dinos_path
     byebug
     expect(page).to have_content("trex")
