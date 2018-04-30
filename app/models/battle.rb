@@ -6,7 +6,7 @@ class Battle
   end
 
   def attack_with_dino(player_dino)
-    if not_unconcious?(player_dino)
+    if concious?(player_dino)
       @enemy_dino.remove_health(player_dino.attack - @enemy_dino.defence)
       @enemy_dino.remove_defence(player_dino.attack)
       player_dino.remove_health(@enemy_dino.attack - player_dino.defence)
@@ -16,12 +16,12 @@ class Battle
     end
   end
 
-  def not_unconcious?(dino)
-    return dino.health > 1
+  def concious?(dino)
+    dino.health > 1
   end
 
   def dino_battle(player_dino)
-    while not_unconcious?(player_dino) && not_unconcious?(@enemy_dino)
+    while concious?(player_dino) && concious?(@enemy_dino)
       attack_with_dino(player_dino)
     end
   end
