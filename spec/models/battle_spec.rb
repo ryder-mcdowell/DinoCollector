@@ -6,8 +6,10 @@ RSpec.describe Battle do
   let(:enemy_dino) {Dino.new(name: 'T Rex', attack: 50, defence: 0, health: 150)}
   let(:battle) {Battle.new(player, enemy_dino)}
 
-  skip "can have a fight winner" do
-    #TODO
+  it "can have a fight winner" do
+    battle.dinoBattle(player_dino)
+    expect(enemy_dino).to be_living
+    expect(player_dino).to_not be_living
   end
 
   it "reduces the correct amount of health for the participating dinos" do

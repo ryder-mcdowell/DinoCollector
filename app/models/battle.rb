@@ -20,4 +20,10 @@ class Battle
     return dino.health > 1
   end
 
+  def dinoBattle(player_dino)
+    while not_unconcious?(player_dino) && not_unconcious?(@enemy_dino)
+      attack_with_dino(player_dino)
+    end
+  end
+
 end
