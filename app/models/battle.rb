@@ -12,12 +12,6 @@ class Battle
     else
       return
     end
-
-    if player_dino.attack > @enemy_dino.attack
-      return player_dino
-    else
-      return @enemy_dino
-    end
   end
 
 end
