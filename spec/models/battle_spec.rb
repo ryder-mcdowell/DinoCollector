@@ -32,8 +32,7 @@ RSpec.describe Battle do
 
   it "doesn't allow an unconcious dino to attack" do
     player_dino.remove_health(79)
-    battle.attack_with_dino(player_dino)
-    expect(enemy_dino).to have_health(150)
+    expect(battle.attack_with_dino(player_dino)).to be_falsy
   end
 
   it "knows when dinos are living" do
