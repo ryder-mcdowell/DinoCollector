@@ -14,4 +14,8 @@ class Dino < ApplicationRecord
     self.defence -= amount
   end
 
+  def catchDino()
+    self.health < 10 && self.health != 0
+  end
+
 end

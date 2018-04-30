@@ -34,4 +34,24 @@ RSpec.describe Battle do
     expect(enemy_dino).to have_health(150)
   end
 
+  it "knows when dinos are living" do
+    expect(player_dino).to be_living
+  end
+
+  it "knows when dinos are dead" do
+    player_dino.removeHealth(80)
+    expect(player_dino).to_not be_living
+  end
+
+  it "will allow players to catch dinos if health is less then 10" do
+    player_dino.removeHealth(71)
+    expect(player_dino.catchDino()).to be_truthy
+  end
+
+  it "will not allow players to catch dinos if they are not alive" do
+    player_dino.removeHealth(80)
+    expect(player_dino).to_not be_living
+    expect(player_dino.catchDino()).to_not be_truthy
+  end
+
 end

@@ -11,6 +11,7 @@ RSpec.describe "creating a dino", type: :system do
 
     click_on("Create Dino")
     visit dinos_path
+
     expect(page).to have_content("trex")
   end
 
