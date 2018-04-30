@@ -10,4 +10,8 @@ class Dino < ApplicationRecord
     self.health -= health
   end
 
+  def removeDefence(amount)
+    self.defence -= amount
+  end
+
 end

@@ -8,7 +8,9 @@ class Battle
   def attack_with_dino(player_dino)
     if not_unconcious?(player_dino)
       @enemy_dino.removeHealth(player_dino.attack - @enemy_dino.defence)
+      @enemy_dino.removeDefence(player_dino.attack)
       player_dino.removeHealth(@enemy_dino.attack - player_dino.defence)
+      player_dino.removeDefence(@enemy_dino.attack)
     else
       return
     end

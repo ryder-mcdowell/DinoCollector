@@ -22,6 +22,12 @@ RSpec.describe Battle do
     expect(enemy_dino.health).to eq(140)
   end
 
+  it "reduces a dinos defence by the amount of damage taken" do
+    enemy_dino.defence = 20
+    battle.attack_with_dino(player_dino)
+    expect(enemy_dino.defence).to eq(0)
+  end
+
   it "doesn't allow an unconcious dino to attack" do
     player_dino.removeHealth(79)
     battle.attack_with_dino(player_dino)
