@@ -14,8 +14,8 @@ class Battle
     end
   end
 
-  def not_unconcious?(player_dino)
-    return player_dino.health > 1
+  def not_unconcious?(dino)
+    return dino.health > 1
   end
 
 end
