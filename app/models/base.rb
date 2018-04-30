@@ -21,7 +21,7 @@ class Base
         @food += food
     end
 
-    def removeDefence(defence)
+    def remove_defence(defence)
         @defence -= defence
     end
 

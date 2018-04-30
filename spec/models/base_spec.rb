@@ -29,7 +29,7 @@ RSpec.describe Base do
     end
 
     it "can remove defence" do
-        base.removeDefence(5)
+        base.remove_defence(5)
         expect(base.getDefence).to eq(startDefence-5)
     end
 

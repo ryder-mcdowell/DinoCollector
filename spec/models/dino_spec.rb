@@ -22,11 +22,11 @@ RSpec.describe Dino, type: :model do
   end
 
   it "can add health" do
-    dino.addHealth(5)
+    dino.add_health(5)
     expect(dino.health).to eq(startHealth+5)
   end
   it "can remove health" do
-    dino.removeHealth(5)
+    dino.remove_health(5)
     expect(dino.health).to eq(startHealth-5)
   end
 end
