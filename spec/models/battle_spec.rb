@@ -12,14 +12,14 @@ RSpec.describe Battle do
 
   it "reduces the correct amount of health for the participating dinos" do
     battle.attack_with_dino(player_dino)
-    expect(player_dino.health).to eq(30)
-    expect(enemy_dino.health).to eq(130)
+    expect(player_dino).to have_health(30)
+    expect(enemy_dino).to have_health(130)
   end
 
   it "allows dino defence to reduce damage taken" do
     enemy_dino.defence = 10
     battle.attack_with_dino(player_dino)
-    expect(enemy_dino.health).to eq(140)
+    expect(enemy_dino).to have_health(140)
   end
 
   it "reduces a dinos defence by the amount of damage taken" do
@@ -31,7 +31,7 @@ RSpec.describe Battle do
   it "doesn't allow an unconcious dino to attack" do
     player_dino.removeHealth(79)
     battle.attack_with_dino(player_dino)
-    expect(enemy_dino.health).to eq(150)
+    expect(enemy_dino).to have_health(150)
   end
 
 end
