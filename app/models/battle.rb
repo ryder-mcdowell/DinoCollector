@@ -6,6 +6,9 @@ class Battle
   end
 
   def attack_with_dino(player_dino)
+    @enemy_dino.removeHealth(player_dino.attack)
+    player_dino.removeHealth(@enemy_dino.attack)
+    
     if player_dino.attack > @enemy_dino.attack
       return player_dino
     else

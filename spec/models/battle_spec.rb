@@ -2,13 +2,18 @@ require 'rails_helper'
 
 RSpec.describe Battle do
   let(:player) {Player.new}
-  let(:player_dino_strong) {Dino.new(name: 'Giga', attack: 1000, defence: 1000, health: 1000)}
-  let(:player_dino_weak) {Dino.new(name: 'Raptor', attack: 1, defence: 1, health: 1)}
-  let(:enemy_dino) {Dino.new(name: 'T Rex', attack: 100, defence: 100, health: 100)}
+  let(:player_dino) {Dino.new(name: 'Raptor', attack: 20, defence: 20, health: 80)}
+  let(:enemy_dino) {Dino.new(name: 'T Rex', attack: 50, defence: 50, health: 150)}
   let(:battle) {Battle.new(player, enemy_dino)}
 
   it "can have a fight winner" do
-    expect(battle.attack_with_dino(player_dino_weak)).to eq(enemy_dino)
+    expect(battle.attack_with_dino(player_dino)).to eq(enemy_dino)
+  end
+
+  it "reduces the correct amount of health for the participating dinos" do
+    battle.attack_with_dino(player_dino)
+    expect(player_dino.health).to eq(30)
+    expect(enemy_dino.health).to eq(130)
   end
 
 end
