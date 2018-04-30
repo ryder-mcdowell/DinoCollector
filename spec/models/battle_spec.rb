@@ -16,4 +16,10 @@ RSpec.describe Battle do
     expect(enemy_dino.health).to eq(130)
   end
 
+  it "doesn't allow an unconcious dino to attack" do
+    player_dino.removeHealth(79)
+    battle.attack_with_dino(player_dino)
+    expect(enemy_dino.health).to eq(150)
+  end
+
 end
