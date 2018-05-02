@@ -35,15 +35,6 @@ RSpec.describe Battle do
     expect(battle.attack_with_dino(player_dino)).to be_falsy
   end
 
-  it "knows when dinos are living" do
-    expect(player_dino).to be_concious
-  end
-
-  it "knows when dinos are dead" do
-    player_dino.damage(80)
-    expect(player_dino).to_not be_concious
-  end
-
   it "will allow players to catch dinos if health is less then 10" do
     player_dino.damage(71)
     expect(player_dino.catchable?()).to be_truthy
