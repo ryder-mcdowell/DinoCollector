@@ -14,7 +14,7 @@ RSpec.describe Dino, type: :model do
     dino.heal(5)
     expect(dino.health).to eq(START_HEALTH + 5)
   end
-  
+
   it "can lose health" do
     dino.damage(5)
     expect(dino.health).to eq(START_HEALTH - 5)
@@ -22,7 +22,13 @@ RSpec.describe Dino, type: :model do
 
   it "goes unconcious from damage that makes it's health equal the lower limit (1)" do
     dino.damage(START_HEALTH)
-    expect(dino.concious).to be_falsy
+    expect(dino).to_not be_concious
+  end
+
+  it "become concious after being healed" do
+    dino.concious = false
+    dino.heal(5)
+    expect(dino).to be_concious
   end
 
   it "damages dinos in a scuffle equal to each other's attack" do
@@ -35,4 +41,5 @@ RSpec.describe Dino, type: :model do
     dino.concious = false
     expect(dino.scuffle(enemy_dino)).to be_falsy
   end
+
 end
