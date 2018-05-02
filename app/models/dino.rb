@@ -18,4 +18,8 @@ class Dino < ApplicationRecord
     self.health < 10 && self.health != 0
   end
 
+  def is_concious?()
+    self.health > 1
+  end
+
 end
