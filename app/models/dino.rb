@@ -8,8 +8,8 @@ class Dino < ApplicationRecord
   end
 
   def damage(amount)
-    if ammount > self.health
-      selfhealth =  1
+    if self.health - amount <= 1
+      self.health =  1
       self.concious = false
     else
       self.health -= amount

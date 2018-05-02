@@ -8,8 +8,8 @@ RSpec.describe Battle do
 
   it "can have a fight winner" do
     battle.dino_battle(player_dino)
-    expect(enemy_dino).to be_living
-    expect(player_dino).to_not be_living
+    expect(enemy_dino).to be_concious
+    expect(player_dino).to_not be_concious
   end
 
   it "reduces the correct amount of health for the participating dinos" do
@@ -36,12 +36,12 @@ RSpec.describe Battle do
   end
 
   it "knows when dinos are living" do
-    expect(player_dino).to be_living
+    expect(player_dino).to be_concious
   end
 
   it "knows when dinos are dead" do
     player_dino.damage(80)
-    expect(player_dino).to_not be_living
+    expect(player_dino).to_not be_concious
   end
 
   it "will allow players to catch dinos if health is less then 10" do
@@ -49,10 +49,9 @@ RSpec.describe Battle do
     expect(player_dino.catchable?()).to be_truthy
   end
 
-  it "will not allow players to catch dinos if they are not alive" do
-    player_dino.damage(80)
-    expect(player_dino).to_not be_living
-    expect(player_dino.catchable?()).to_not be_truthy
+  it "will not allow players to catch dinos if they are to healthy" do
+    player_dino.damage(70)
+    expect(player_dino.catchable?).to_not be_truthy
   end
 
 end
