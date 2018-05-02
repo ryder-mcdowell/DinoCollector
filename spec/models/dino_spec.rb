@@ -28,14 +28,10 @@ RSpec.describe Dino, type: :model do
     expect(dino.concious).to be_falsy
   end
 
-  it "can damage another dino" do
-    dino.scuffle(enemy_dino)
-    expect(enemy_dino).to have_health(START_HEALTH - ATTACK)
-  end
-
-  it "gets damaged in an scuffle against another dino" do
+  it "damages dinos in a scuffle equal to each other's attack" do
     dino.scuffle(enemy_dino)
     expect(dino).to have_health(START_HEALTH - ATTACK)
+    expect(enemy_dino).to have_health(START_HEALTH - ATTACK)
   end
 
   it "can't attack if it is unconcious" do
