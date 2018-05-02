@@ -3,6 +3,7 @@ class Dino < ApplicationRecord
   validates :name, presence: true
 
   def scuffle(enemy_dino)
+    return false unless self.concious
     enemy_dino.damage(self.attack)
     self.damage(enemy_dino.attack)
   end

@@ -50,4 +50,9 @@ RSpec.describe Dino, type: :model do
     dino.scuffle(enemy_dino)
     expect(dino).to have_health(1)
   end
+
+  it "can't attack if it is unconcious" do
+    dino.concious = false
+    expect(dino.scuffle(enemy_dino)).to be_falsy
+  end
 end

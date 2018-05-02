@@ -30,11 +30,6 @@ RSpec.describe Battle do
     expect(enemy_dino.defence).to eq(0)
   end
 
-  it "doesn't allow an unconcious dino to attack" do
-    player_dino.damage(79)
-    expect(battle.attack_with_dino(player_dino)).to be_falsy
-  end
-
   it "will allow players to catch dinos if health is less then 10" do
     player_dino.damage(71)
     expect(player_dino.catchable?()).to be_truthy
