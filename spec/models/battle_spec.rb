@@ -31,7 +31,7 @@ RSpec.describe Battle do
   end
 
   it "doesn't allow an unconcious dino to attack" do
-    player_dino.remove_health(79)
+    player_dino.damage(79)
     expect(battle.attack_with_dino(player_dino)).to be_falsy
   end
 
@@ -40,19 +40,19 @@ RSpec.describe Battle do
   end
 
   it "knows when dinos are dead" do
-    player_dino.remove_health(80)
+    player_dino.damage(80)
     expect(player_dino).to_not be_living
   end
 
   it "will allow players to catch dinos if health is less then 10" do
-    player_dino.remove_health(71)
-    expect(player_dino.catch_dino()).to be_truthy
+    player_dino.damage(71)
+    expect(player_dino.catchable?()).to be_truthy
   end
 
   it "will not allow players to catch dinos if they are not alive" do
-    player_dino.remove_health(80)
+    player_dino.damage(80)
     expect(player_dino).to_not be_living
-    expect(player_dino.catch_dino()).to_not be_truthy
+    expect(player_dino.catchable?()).to_not be_truthy
   end
 
 end

@@ -2,19 +2,19 @@ class Dino < ApplicationRecord
   belongs_to :player, optional: true
   validates :name, presence: true
 
-  def add_health(amount)
+  def heal(amount)
     self.health += amount
   end
 
-  def remove_health(amount)
+  def damage(amount)
     self.health -= amount
   end
 
-  def remove_defence(amount)
+  def weaken(amount)
     self.defence -= amount
   end
 
-  def catch_dino()
+  def catchable?()
     self.health < 10 && self.health != 0
   end
 

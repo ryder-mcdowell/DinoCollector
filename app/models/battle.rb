@@ -7,10 +7,10 @@ class Battle
 
   def attack_with_dino(player_dino)
     return false unless concious?(player_dino)
-    @enemy_dino.remove_health(player_dino.attack - @enemy_dino.defence)
-    @enemy_dino.remove_defence(player_dino.attack)
-    player_dino.remove_health(@enemy_dino.attack - player_dino.defence)
-    player_dino.remove_defence(@enemy_dino.attack)
+    @enemy_dino.damage(player_dino.attack - @enemy_dino.defence)
+    @enemy_dino.weaken(player_dino.attack)
+    player_dino.damage(@enemy_dino.attack - player_dino.defence)
+    player_dino.weaken(@enemy_dino.attack)
   end
 
   def concious?(dino)
