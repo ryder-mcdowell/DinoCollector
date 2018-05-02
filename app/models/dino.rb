@@ -4,6 +4,7 @@ class Dino < ApplicationRecord
 
   def heal(amount)
     self.health += amount
+    concious?
   end
 
   def damage(amount)
@@ -20,8 +21,10 @@ class Dino < ApplicationRecord
   end
 
   def concious?
-    if self.health < 2
+    if self.health <= 1
       self.concious = false
+    else
+      self.concious = true
     end
   end
 

@@ -29,4 +29,13 @@ RSpec.describe Dino, type: :model do
     dino.damage(5)
     expect(dino.health).to eq(startHealth-5)
   end
+
+  it "knows when it is concious" do
+    expect(dino.concious).to be_truthy
+  end
+
+  it "knows when it is unconcious" do
+    dino.damage(9)
+    expect(dino.concious).to be_falsy
+  end
 end
