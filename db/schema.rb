@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502212851) do
+ActiveRecord::Schema.define(version: 20180502214812) do
 
   create_table "dinos", force: :cascade do |t|
     t.integer "player_id"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180502212851) do
     t.integer "health"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "concious"
+    t.boolean "concious", default: true
     t.index ["player_id"], name: "index_dinos_on_player_id"
   end
 
