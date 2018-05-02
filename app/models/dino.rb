@@ -9,12 +9,16 @@ class Dino < ApplicationRecord
 
   def heal(amount)
     self.health += amount
-    concious?
+    self.concious = true
   end
 
   def damage(amount)
-    self.health -= amount
-    concious?
+    if ammount > self.health
+      selfhealth =  1
+      self.concious = false
+    else
+      self.health -= amount
+    end
   end
 
   def weaken(amount)
@@ -23,14 +27,6 @@ class Dino < ApplicationRecord
 
   def catchable?
     self.health < 10 && self.health != 0
-  end
-
-  def concious?
-    if self.health <= 1
-      self.concious = false
-    else
-      self.concious = true
-    end
   end
 
 end
