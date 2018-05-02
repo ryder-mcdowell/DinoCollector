@@ -10,20 +10,17 @@ RSpec.describe Dino, type: :model do
   let(:enemy_dino) {Dino.new(name: 'EnemyDino', attack: ATTACK,
       defence: DEFENCE, health: START_HEALTH)}
 
-  it "can add health" do
+  it "can gain health" do
     dino.heal(5)
     expect(dino.health).to eq(START_HEALTH + 5)
   end
-  it "can remove health" do
+  
+  it "can lose health" do
     dino.damage(5)
     expect(dino.health).to eq(START_HEALTH - 5)
   end
 
-  it "knows when it is concious" do
-    expect(dino.concious).to be_truthy
-  end
-
-  it "knows when it is unconcious" do
+  it "goes unconcious from damage that makes it's health equal the lower limit (1)" do
     dino.damage(START_HEALTH)
     expect(dino.concious).to be_falsy
   end
