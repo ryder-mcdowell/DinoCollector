@@ -42,4 +42,8 @@ RSpec.describe Dino, type: :model do
     expect(dino.scuffle(enemy_dino)).to be_falsy
   end
 
+  it "can be caught if it's health is less than 10" do
+    enemy_dino.health = 9
+    expect(enemy_dino).to be_catchable
+  end
 end

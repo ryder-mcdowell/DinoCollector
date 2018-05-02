@@ -27,7 +27,7 @@ class Dino < ApplicationRecord
   end
 
   def catchable?
-    self.health < 10 && self.health != 0
+    self.health < 10
   end
 
 end
