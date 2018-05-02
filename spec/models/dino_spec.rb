@@ -43,11 +43,11 @@ RSpec.describe Dino, type: :model do
 
   it "can damage another dino" do
     dino.scuffle(enemy_dino)
-    expect(enemy_dino).to have_health(0)
+    expect(enemy_dino).to have_health(1)
   end
 
   it "gets damaged in an scuffle against another dino" do
     dino.scuffle(enemy_dino)
-    expect(dino).to have_health(0)
+    expect(dino).to have_health(1)
   end
 end
