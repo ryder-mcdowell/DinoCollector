@@ -2,6 +2,11 @@ class Dino < ApplicationRecord
   belongs_to :player, optional: true
   validates :name, presence: true
 
+  def scuffle(enemy_dino)
+    enemy_dino.damage(self.attack)
+    self.damage(enemy_dino.attack)
+  end
+
   def heal(amount)
     self.health += amount
     concious?
