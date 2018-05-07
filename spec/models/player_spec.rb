@@ -1,5 +1,7 @@
 require "rails_helper"
 
+INSPIRE_STRENGTH = 10
+
 RSpec.describe Player do
   let(:player) { FactoryBot.build_stubbed(:player) }
   let(:dino) {Dino.new(name: 'PlayerDino', attack: 1,
@@ -23,7 +25,6 @@ RSpec.describe Player do
 
   it "can inspire dinos to increase dino defence" do
     player.dinos << dino
-    player.inspire_dinos
-    expect(dino.defence).to eq(11)
+    expect{ player.inspire_dinos }.to change(dino, :defence).by(INSPIRE_STRENGTH)
   end
 end
