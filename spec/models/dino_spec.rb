@@ -20,6 +20,16 @@ RSpec.describe Dino, type: :model do
     expect(dino.health).to eq(START_HEALTH - 5)
   end
 
+  it "can gain defence" do
+    dino.strengthen(5)
+    expect(dino.defence).to eq(DEFENCE + 5)
+  end
+
+  it "can lose defence" do
+    dino.weaken(5)
+    expect(dino.defence).to eq(DEFENCE - 5)
+  end
+
   it "goes unconcious from damage that makes it's health equal the lower limit (1)" do
     dino.damage(START_HEALTH)
     expect(dino).to_not be_concious
