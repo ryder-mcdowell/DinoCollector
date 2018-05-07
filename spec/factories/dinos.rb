@@ -4,6 +4,9 @@ FactoryBot.define do
     attack 1
     defence 1
     health 10
-    concious true
+
+    trait :unconcious do
+      concious false
+    end
   end
 end
