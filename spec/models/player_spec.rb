@@ -4,8 +4,7 @@ INSPIRE_STRENGTH = 10
 
 RSpec.describe Player do
   let(:player) { FactoryBot.build_stubbed(:player) }
-  let(:dino) {Dino.new(name: 'PlayerDino', attack: 1,
-      defence: 1, health: 10)}
+  let(:dino) { FactoryBot.build_stubbed(:dino) }
 
   it "doesn't initially have dinos" do
     expect(player.number_of_dinos).to eq(0)
@@ -18,6 +17,7 @@ RSpec.describe Player do
 
   it "can use a potion to heal a dino" do
     dino.damage(10)
+    expect(dino).to_not be_concious
     player.use_potion(dino)
     expect(player.potions).to eq(0)
     expect(dino).to be_concious

@@ -4,12 +4,6 @@ FactoryBot.define do
     attack 1
     defence 1
     health 10
-  end
-
-  factory :strong_dino do
-    name "T-Rex"
-    attack 5
-    defence 2
-    health 10
+    concious true
   end
 end

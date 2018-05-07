@@ -5,10 +5,8 @@ ATTACK = 1
 DEFENCE = 1
 
 RSpec.describe Dino, type: :model do
-  let(:dino) {Dino.new(name: 'PlayerDino', attack: ATTACK,
-      defence: DEFENCE, health: START_HEALTH)}
-  let(:enemy_dino) {Dino.new(name: 'EnemyDino', attack: ATTACK,
-      defence: DEFENCE, health: START_HEALTH)}
+  let(:dino) { FactoryBot.build_stubbed(:dino) }
+  let(:enemy_dino) { FactoryBot.build_stubbed(:dino) }
 
   it "can gain health" do
     dino.heal(5)
