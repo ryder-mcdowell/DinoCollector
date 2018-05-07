@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Player do
-  let(:player) {Player.new}
+  let(:player) { FactoryBot.build_stubbed(:player) }
   let(:dino) {Dino.new}
 
   it "doesn't initially have dinos" do
