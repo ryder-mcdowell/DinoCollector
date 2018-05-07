@@ -2,6 +2,8 @@ class Dino < ApplicationRecord
   belongs_to :player, optional: true
   validates :name, presence: true
 
+  CATCHABLE_HEALTH = 10
+
   def scuffle(enemy_dino)
     return false unless self.concious
     enemy_dino.damage(self.attack)
@@ -31,7 +33,7 @@ class Dino < ApplicationRecord
   end
 
   def catchable?
-    self.health < 10
+    self.health <= CATCHABLE_HEALTH
   end
 
 end
