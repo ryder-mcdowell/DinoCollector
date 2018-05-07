@@ -4,7 +4,7 @@ INSPIRE_STRENGTH = 10
 
 RSpec.describe Player do
   let(:player) { FactoryBot.build_stubbed(:player) }
-  let(:dino) { FactoryBot.build_stubbed(:dino) }
+  let(:dino) { FactoryBot.build(:dino) }
 
   it "doesn't initially have dinos" do
     expect(player.number_of_dinos).to eq(0)
