@@ -21,4 +21,9 @@ RSpec.describe Player do
     expect(dino).to be_concious
   end
 
+  it "can inspire dinos to increase dino defence" do
+    player.dinos << dino
+    player.inspire_dinos
+    expect(dino.defence).to eq(11)
+  end
 end

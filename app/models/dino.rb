@@ -22,6 +22,10 @@ class Dino < ApplicationRecord
     end
   end
 
+  def strengthen(amount)
+    self.defence += amount
+  end
+
   def weaken(amount)
     self.defence -= amount
   end
