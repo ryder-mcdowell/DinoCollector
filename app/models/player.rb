@@ -18,4 +18,9 @@ class Player < ApplicationRecord
     dinos.each { |d| d.strengthen(INSPIRE_STRENGTH) }
   end
 
+  def eat(big_dependency)
+    big_dependency.execute
+    "yummy"
+  end
+
 end

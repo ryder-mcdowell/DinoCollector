@@ -26,4 +26,22 @@ RSpec.describe Player do
     player.dinos << dino
     expect{ player.inspire_dinos }.to change(dino, :defence).by(INSPIRE_STRENGTH)
   end
+
+  it "can eat" do
+    big_dependency = BigDependency.new
+    allow(big_dependency).to receive("execute")
+    expect(player.eat(big_dependency)).to eq("yummy")
+  end
+
+  it "can eat again" do
+    big_dependency = double(execute: 5)
+    expect(player.eat(big_dependency)).to eq("yummy")
+  end
+
+  it "can eat again again" do
+    big_dependency = double("BigDependency")
+    allow(big_dependency).to receive("execute")
+    expect(player.eat(big_dependency)).to eq("yummy")
+  end
+
 end
