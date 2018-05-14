@@ -36,4 +36,9 @@ class Dino < ApplicationRecord
     self.health <= CATCHABLE_HEALTH
   end
 
+  def perform(big_dependency)
+    big_dependency.execute
+    42
+  end
+
 end

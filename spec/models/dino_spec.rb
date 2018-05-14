@@ -4,6 +4,13 @@ START_HEALTH = 10
 ATTACK = 1
 DEFENCE = 1
 
+class FakeBigDependency
+
+  def execute
+  end
+
+end
+
 RSpec.describe Dino, type: :model do
   let(:dino) { FactoryBot.build_stubbed(:dino) }
   let(:enemy_dino) { FactoryBot.build_stubbed(:dino) }
@@ -54,4 +61,22 @@ RSpec.describe Dino, type: :model do
     enemy_dino.health = 10
     expect(enemy_dino).to be_catchable
   end
+
+  it "has the big dependency with a fake" do
+    big_dependency = FakeBigDependency.new
+    expect(dino.perform(big_dependency)).to eq(42)
+  end
+
+  it "has the big dependency with a double" do
+    big_dependency_double = double("BigDependency")
+    allow(big_dependency_double).to receive("execute")
+    expect(dino.perform(big_dependency_double)).to eq(42)
+  end
+
+  it "has the big dependency with a stubbed class" do
+    big_dependency_stub = BigDependency.new
+    allow(big_dependency_stub).to receive("execute").and_return(5)
+    expect(dino.perform(big_dependency_stub)).to eq(42)
+  end
+
 end
